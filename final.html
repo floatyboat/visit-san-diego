@@ -1,0 +1,272 @@
+<!DOCTYPE html><html>
+<head><title>Final: Visit San Diego</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css"/>
+</head>
+<body>
+<script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+<div id="mapid" style="width: 600px; height: 400px; margin: auto"></div>
+<script>
+var mymap = L.map('mapid').setView([32.854452311939276, -117.09933323150504],9);
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+var myPoints = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "short_description": "Wild Animal Park with big space for animals. Home of the last two White Rhinos in the world!",
+        "name": "San Diego Zoo Safari Park",
+        "website": "https://sdzsafaripark.org/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.99456691741943,
+          33.097599664158516
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Torrey Pines Golf Course",
+        "short_description": "Home of the world famous golf course with beutiful views of the ocean.",
+        "website": "http://www.torreypinesgolfcourse.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.24437713623047,
+          32.902578270317534
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SeaWorld",
+        "short_description": "Home of Shamu the Whale",
+        "website": "https://seaworld.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.22686767578125,
+          32.765697046917204
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Balboa Park",
+        "short_description": "Visit Balboa Park to go to the San Diego Zoo or any of the many museums located here",
+        "website": "https://www.balboapark.org/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.1462297439575,
+          32.73126328163471
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "La Jolla Cove",
+        "short_description": "One of the best spots for snorkling, kayaking, or going for a swim!",
+        "website": "https://www.lajolla.com/guides/la-jolla-cove/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.27317333221434,
+          32.85078583429864
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Old Town",
+        "short_description": "The location of the first settlement in California. Visit to see the mission or get some homemade tortillas!",
+        "website": "https://www.oldtownsandiego.org/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.19674110412596,
+          32.75436497105971
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "short_description": "The home of the world famous Hotel Del Coronado. Visit for a nice day at the beach or ice skating in the winter!",
+        "name": "Hotel Del Coronado",
+        "website": "https://hoteldel.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.17777252197264,
+          32.68099643258195
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "short_description": "Visit Petco Park to see a Padres game!",
+        "name": "Petco Park",
+        "website": "https://www.mlb.com/padres/ballpark/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.1570336818695,
+          32.70773130510701
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cabrillo National Monument",
+        "short_description": "Visit here during low tide to see some tidepools",
+        "website": "https://www.nps.gov/cabr/index.htm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.24214553833006,
+          32.67145987057799
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ocean Beach Boardwalk",
+        "short_description": "Visit this area for some good food and walk out on the pier",
+        "website": "https://www.yelp.com/biz/ocean-beach-boardwalk-san-diego"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.25356101989746,
+          32.74729071497808
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "website": "https://www.gaslamp.org/",
+        "name": "Gaslamp Quarter",
+        "short_description": "Visit the Gaslamp for San Diego nightlife, or to go to Comic Con!"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.16373920440674,
+              32.715557933484725
+            ],
+            [
+              -117.16361045837402,
+              32.711441591705125
+            ],
+            [
+              -117.16794490814208,
+              32.7112249368759
+            ],
+            [
+              -117.15768814086914,
+              32.70519449966784
+            ],
+            [
+              -117.15421199798585,
+              32.708011161787894
+            ],
+            [
+              -117.15485572814943,
+              32.70876947870482
+            ],
+            [
+              -117.15481281280516,
+              32.71559404090548
+            ],
+            [
+              -117.16373920440674,
+              32.715557933484725
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": " Little Italy",
+        "short_description": "Visit for some authentic Italian food",
+        "website": "https://www.littleitalysd.com/"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -117.17371702194214,
+              32.72951236259754
+            ],
+            [
+              -117.17159271240234,
+              32.72453017802481
+            ],
+            [
+              -117.17099189758301,
+              32.721876509568204
+            ],
+            [
+              -117.17099189758301,
+              32.718807542811795
+            ],
+            [
+              -117.16472625732423,
+              32.71882559586624
+            ],
+            [
+              -117.16479063034056,
+              32.7229596490892
+            ],
+            [
+              -117.1708631515503,
+              32.73037880105867
+            ],
+            [
+              -117.17371702194214,
+              32.72951236259754
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
+var geojsonLayer=L.geoJSON(myPoints, {onEachFeature: happenHover}).addTo(mymap);
+function happenHover(feature,layer){
+layer.bindPopup(feature.properties.name + '<br>' +
+       feature.properties.short_description + '<br>' +
+       feature.properties.website);
+        layer.on('click', function(e){e.target.openPopup();});
+      }
+</script>
+<h1> Visit San Diego </h1>
+<p>
+  This map was created to provide information for someone traveling to San Diego. It provides numerous locations around the county that would be worthwile to visit.
+</body>
+</html>
